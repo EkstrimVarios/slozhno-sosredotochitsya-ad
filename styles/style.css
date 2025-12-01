@@ -1,5 +1,476 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Декоративные уголки */
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+}
+
+.decorated-zone::before {
+  top: 20px;
+  right: 20px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  bottom: 20px;
+  left: 20px;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+}
+
+/* Шапка */
+.header {
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  align-items: center;
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header__decorated {
+  position: absolute;
+  top: 20px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.header__decorated-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  filter: drop-shadow(0 0 4px var(--accent-color));
+}
+
+/* Кнопки темы - НА МОБИЛЬНЫХ В СТОЛБЕЦ СПРАВА */
+.header__theme-menu {
+  justify-self: end; /* Справа */
+  align-self: start;
+  margin-top: 39px; /* Отступ от REC на мобильных */
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column; /* На мобильных - столбец */
+  gap: 10px; /* Меньший отступ между кнопками в столбце */
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__theme-menu-item {
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+  text-transform: lowercase;
+  font-size: var(--font-size);
+  transition: border 0.3s;
+  min-height: 26px;
+  min-width: 70px;
+  text-align: center;
+  width: 70px;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border: 1px solid var(--button-focus-color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+/* Заголовок в шапке */
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--shadow-color);
+  line-height: 0.825;
+  font-weight: 700;
+  text-align: left;
+}
+
+.header__description {
+  justify-self: end;
+  align-self: center;
+  max-width: 491px;
+  margin-top: 20px;
+}
+
+.header__subtitle {
+  font-weight: 700;
+  font-size: var(--font-size);
+}
+
+/* Общий класс для текста на цветном фоне */
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  font-weight: 700;
+}
+
+/* Основной контент */
+.content {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  background-color: var(--content-background-color);
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  color: var(--accent-color);
+  font-size: var(--font-size);
+  font-weight: 700;
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+}
+
+.section__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section__text {
+  margin-top: 10px;
+}
+
+.section__text:first-child {
+  margin-top: 0;
+}
+
+.section__column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Ссылки */
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  border: 1px solid var(--text-color);
+}
+
+/* Карточки */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__title {
+  font-size: var(--font-size);
+  font-weight: 700;
+}
+
+.card__text {
+  line-height: var(--line-height);
+}
+
+/* Методы */
+.method {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.method__title {
+  font-size: var(--font-size);
+  font-weight: 400;
+}
+
+.method__text {
+  line-height: var(--line-height);
+}
+
+/* Галерея */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gallery__title {
+  font-size: var(--font-size);
+  font-weight: 700;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Футер */
+.footer {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--shadow-color);
+  line-height: 0.825;
+  font-weight: 700;
+}
+
+.footer__copyright {
+  position: absolute;
+  bottom: 20px;
+  color: var(--text-color);
+}
+
+/* Адаптивность для планшетов */
+@media (width >= 768px) {
+  .header {
+    padding: 20px;
+  }
+  
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-left: -20px;
+  }
+  
+  .header__description {
+    max-width: 364px;
+    margin-top: 40px;
+  }
+  
+  /* На планшетах меню ВСЕ ЕЩЕ В СТОЛБЕЦ СПРАВА */
+  .header__theme-menu {
+    justify-self: end; /* Справа */
+    align-self: start;
+    width: auto;
+    margin-top: 146px; /* Больший отступ от REC на планшетах */
+  }
+  
+  .header__theme-menu-list {
+    flex-direction: column; /* На планшетах тоже столбец */
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: flex-end; /* Выравниваем по правому краю */
+  }
+  
+  .content {
+    padding: 60px 20px;
+    gap: 80px;
+  }
+  
+  /* Секция "Почему сосредоточиться так сложно" */
+  .section-why {
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .section-why .section__title {
+    grid-column: 1;
+  }
+  
+  .section-why .section__content {
+    grid-column: 2;
+  }
+  
+  /* Секция "Что мешает сконцентрироваться" */
+  .section-what .section__title {
+    grid-column: 1 / -1;
+  }
+  
+  .section-what .section__content {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  /* Секция "Как концентрироваться лучше" */
+  .section-how {
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .section-how .section__title {
+    grid-column: 1;
+  }
+  
+  .section-how .section__content {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .section-how .section__column:first-child {
+    margin-bottom: 20px;
+  }
+  
+  /* Галерея */
+  .gallery {
+    gap: 20px;
+  }
+  
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+  
+  .gallery__image:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .gallery__image:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  
+  .gallery__image:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  
+  .gallery__image:nth-child(4) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .gallery__image:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  /* Футер */
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+/* Адаптивность для десктопов */
+@media (width >= 1024px) {
+  /* На десктопе меню В СТРОКУ ПО ЦЕНТРУ */
+  .header__theme-menu {
+    justify-self: center; /* Центрируем на десктопе */
+    align-self: start;
+    width: 100%;
+    margin-top: 0; /* На десктопе нет специального отступа от REC */
+  }
+  
+  .header__theme-menu-list {
+    flex-direction: row; /* На десктопе - строка */
+    gap: 20px; /* Больший отступ между кнопками в строке */
+    justify-content: center; /* Центрируем кнопки */
+    align-items: center;
+  }
+  
+  .header__title {
+    text-shadow: 4px 4px 0 var(--shadow-color);
+  }
+  
+  .header__description {
+    max-width: 491px;
+  }
+  
+  /* Секция "Что мешает сконцентрироваться" */
+  .section-what .section__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Секция "Как концентрироваться лучше" */
+  .section-how .section__content {
+    flex-direction: row;
+  }
+  
+  .section-how .section__column:first-child {
+    flex: 0 0 315px;
+    margin-bottom: 0;
+  }
+  
+  .section-how .section__column:last-child {
+    flex: 1;
+  }
+  
+  /* Футер */
+  .footer__title {
+    text-shadow: 4px 4px 0 var(--shadow-color);
+  }
 }

@@ -1,40 +1,193 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Сложно сосредоточиться</title>
-    <script src="./scripts/script.js"></script>
-  </head>
-  <body class="page">
-    <header class="header decorated-zone">
+<html lang="ru" class="theme-dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>Сложно сосредоточиться</title>
+  <link rel="stylesheet" href="./styles/variables.css">
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/dark.css">
+  <link rel="stylesheet" href="./styles/light.css">
+  <link rel="icon" href="./images/favicon.svg" type="image/svg">
+</head>
+
+<body class="page">
+  <div class="decorated-zone">
+    <header class="header">
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
+            <button class="header__theme-menu-button header__theme-menu-button_type_light" type="button">
               День
             </button>
           </li>
           <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
+            <button class="header__theme-menu-button header__theme-menu-button_type_auto" type="button">
               Авто
             </button>
           </li>
           <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
+            <button class="header__theme-menu-button header__theme-menu-button_type_dark" type="button">
               Неон
             </button>
           </li>
         </ul>
       </nav>
+      <div class="header__decorated">
+        <span class="header__decorated-text" aria-hidden="true">REC</span>
+        <span class="header__decorated-dot"></span>
+      </div>
+      <h1 class="header__title">no focus</h1>
+      <p class="header__subtitle title-decor">
+        Что делать, когда не можешь делать ничего<br>
+        Или почему нам так сложно сконцентрироваться, особенно когда очень надо
+      </p>
     </header>
-  </body>
+
+    <main class="content">
+      <section class="section section-why">
+        <h2 class="section__title">Почему сосредоточиться так сложно</h2>
+        <div class="section__content">
+          <p class="section__text">
+            Особенно сложно сосредоточиться, когда задач много и все они — важные. Где же легендарная многозадачность,
+            когда она так нужна вам (и всем нанимающим менеджерам этого мира)? А дело в том, что её просто не
+            существует. Исследователи <a href="#" class="link">выяснили</a>, что мозгу тяжело концентрироваться больше
+            чем на одной задаче. Многозадачность — это миф. Когда вы делаете несколько дел сразу, вы просто быстро
+            переключаетесь между ними. Это приводит к потерям производительности. Вы быстрее устаёте и в итоге делаете
+            хуже и медленнее в разы.
+          </p>
+          <p class="section__text">
+            А когда знаешь, что сосредоточиться не получается, мысли о том, как бы сконцентрироваться, отвлекают от
+            задачи сильнее, чем любая внешняя помеха. Получается замкнутый круг — чем сильнее переживаешь из-за проблем
+            с фокусировкой, тем сложнее становится работать. Что же делать? Вывод один — оставаться в рамках одной
+            задачи, не перепрыгивая между делами. Сфокусироваться на чём-то одном. Но для этого нужно привести в порядок
+            свои мысли и позаботиться об организации пространства вокруг себя.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-what">
+        <h2 class="section__title">Что мешает сконцентрироваться</h2>
+        <div class="section__content">
+          <article class="card">
+            <h3 class="card__title title-decor">Многозадачность</h3>
+            <p class="card__text">
+              Как пишет Itspsychology, доказано, что одновременное выполнение нескольких связанных задач вредит
+              продуктивности. В ходе исследования группу из 20 студентов попросили пройти тест, состоящий из вопросов на
+              внимательность. Сначала студенты выполняли задание в тишине, а потом — под аккомпанемент треков, слова
+              которых нужно было запоминать. Результаты показали, что продуктивность студентов снизилась вдвое.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title title-decor">Усталость</h3>
+            <p class="card__text">
+              Очень важный, но при этом часто недооценённый фактор. Мы живём в обществе, где быть вечно занятым — это
+              норма. Признаться в том, что вы устали, иногда считается слабостью. На самом же деле, усталость сильно
+              влияет на продуктивность и способность фокусироваться. Взрослому человеку необходимо 7–9 часов сна. Если
+              вы спите меньше, скорее всего, вы не высыпаетесь, а значит — ваш мозг работает не на полную мощность.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title title-decor">Отсутствие перерывов</h3>
+            <p class="card__text">
+              Наш мозг может быть сфокусирован только в течение 90 минут. После этого ему обязательно нужен перерыв.
+              Даже 10–15 минут отдыха помогут вам вернуть боевой настрой и продуктивность. Главное — не заглядывать в
+              это время в соцсети. Лучше встать, пройтись, размяться или сделать небольшую разминку.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title title-decor">Стресс и негативные эмоции</h3>
+            <p class="card__text">
+              Тревожные мысли и переживания тоже мешают концентрироваться на рабочих задачах. Вне зависимости от того,
+              чем вызван стресс — работой или личными переживаниями, — вы будете постоянно отвлекаться на навязчивые
+              мысли.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title title-decor">Отсутствие мотивации</h3>
+            <p class="card__text">
+              Когда задача кажется скучной, неинтересной или неважной, сосредоточиться на ней почти невозможно.
+              Мотивация — это топливо для нашего внимания. Если его нет, мы будем откладывать дело на потом или
+              выполнять его спустя рукава.
+            </p>
+          </article>
+          <article class="card">
+            <h3 class="card__title title-decor">Неорганизованность</h3>
+            <p class="card__text">
+              Беспорядок на рабочем столе, в документах или в мыслях тоже мешает сосредоточиться. Когда вокруг хаос,
+              мозгу приходится тратить энергию на фильтрацию информации и поиск нужного. Это снижает продуктивность и
+              увеличивает усталость.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-how">
+        <h2 class="section__title">Как концентрироваться лучше</h2>
+        <div class="section__content">
+          <div class="section__column">
+            <h3 class="section__subtitle title-decor">5 простых шагов</h3>
+            <p class="section__text">
+              Не обязательно быть Гением Спокойствия, чтобы работать продуктивно. Иногда нужно просто снизить нагрузку
+              на мозг — и он скажет вам спасибо. Вот несколько рабочих способов сделать это.
+            </p>
+          </div>
+          <div class="section__column">
+            <article class="method">
+              <h4 class="method__title title-decor">Убирать всё лишнее</h4>
+              <p class="method__text">
+                Уберите со стола лишние предметы, закройте вкладки, не относящиеся к работе. Если вас отвлекает шум —
+                используйте наушники с шумоподавлением или беруши. Чем меньше раздражителей вокруг, тем проще
+                сосредоточиться.
+              </p>
+            </article>
+            <article class="method">
+              <h4 class="method__title title-decor">Разбивать большие задачи на маленькие</h4>
+              <p class="method__text">
+                Большая задача пугает и демотивирует. Разбейте её на небольшие подзадачи — так вы будете видеть прогресс
+                и не потеряете мотивацию. Каждая выполненная подзадача будет давать ощущение движения вперёд.
+              </p>
+            </article>
+            <article class="method">
+              <h4 class="method__title title-decor">Использовать технику Pomodoro</h4>
+              <p class="method__text">
+                Работайте 25 минут, затем делайте перерыв 5 минут. После четырёх таких циклов — длинный перерыв 15–30
+                минут. Этот метод помогает поддерживать высокий уровень концентрации и избегать выгорания.
+              </p>
+            </article>
+            <article class="method">
+              <h4 class="method__title title-decor">Заботиться о здоровье</h4>
+              <p class="method__text">
+                Питайтесь сбалансированно, пейте достаточно воды, занимайтесь спортом и не забывайте про сон. Физическое
+                состояние напрямую влияет на когнитивные способности. Выспавшийся и сытый мозг работает эффективнее.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2 class="gallery__title title-decor">Галерея</h2>
+        <div class="gallery__grid">
+          <img src="./images/sunset.png" alt="Закат над городом" class="gallery__image" loading="lazy">
+          <img src="./images/ice-cream.png" alt="Стаканчик с мороженым" class="gallery__image" loading="lazy">
+          <img src="./images/tape.png" alt="Кассетный магнитофон" class="gallery__image" loading="lazy">
+          <img src="./images/books.png" alt="Стопка книг" class="gallery__image" loading="lazy">
+          <img src="./images/street.png" alt="Улица вечером" class="gallery__image" loading="lazy">
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer decorated-zone">
+      <h2 class="footer__title">focus</h2>
+    </footer>
+  </div>
+
+  <script src="./scripts/script.js"></script>
+</body>
+
 </html>
