@@ -1,41 +1,12 @@
+
 :root.theme-dark {
-  --background-color: #000028;
-  --text-color: #F1B2CE;
-  --accent-color: #FF0070;
-  --title-color: #DB00FF;
-  --shadow-color: #FF0070;
-  --button-hover-color: rgba(255, 0, 112, 0.4);
-  --button-focus-color: #FF0070;
-  --button-active-color: #FF0070;
-  --background-image: url(../images/cover-image-dark.png);
-}
-
-/* Показываем REC в тёмной теме */
-.theme-dark .header__decorated {
-  display: flex;
-  color: var(--accent-color);
-}
-
-.theme-dark .header__decorated-dot {
-  background-color: var(--accent-color);
-  filter: drop-shadow(0 0 4px var(--accent-color));
-}
-
-/* В тёмной теме активна кнопка "Неон" */
-.theme-dark .header__theme-menu-button_type_dark {
-  border: 1px solid var(--accent-color);
-  pointer-events: none;
-}
-
-/* Стили для всех кнопок в тёмной теме */
-.theme-dark .header__theme-menu-button {
-  color: var(--accent-color);
-}
-
-.theme-dark .header__theme-menu-button:hover {
-  border: 1px solid var(--button-hover-color);
-}
-
-.theme-dark .header__theme-menu-button:focus-visible {
-  border: 1px solid var(--button-focus-color);
+    --title-color: #DB00FF;
+    --text-color: #F1B2CE;
+    --sub-text-color: #000028;
+    --accent-color: #ff0070;
+    --btn-color:#ff0070;
+    --border-color: rgb(255, 0, 112, 0.4);
+    --backgroung-image: url(../images/cover-image-dark.png);
+    --page-background-color: #000028;
+    --rec-decor-visibility: visible;
 }
